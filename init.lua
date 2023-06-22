@@ -41,8 +41,6 @@ P.S. You can delete this when you're done too. It's your config now :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.opt.laststatus = 3
-
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -132,12 +130,11 @@ require('lazy').setup({
   },
 
   {
-    "folke/tokyonight.nvim",
-    lazy = false,
+    -- Theme inspired by Atom
+    'navarasu/onedark.nvim',
     priority = 1000,
-    opts = {},
     config = function()
-      vim.cmd.colorscheme 'tokyonight'
+      vim.cmd.colorscheme 'onedark'
     end,
   },
 
@@ -147,8 +144,8 @@ require('lazy').setup({
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = true,
-        theme = 'tokyonight',
+        icons_enabled = false,
+        theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },
@@ -432,7 +429,7 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  tsserver = {},
+  -- tsserver = {},
 
   lua_ls = {
     Lua = {
