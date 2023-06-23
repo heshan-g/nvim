@@ -233,4 +233,7 @@ return {
         }
     }
   end,
+
+  vim.keymap.set("n", "<leader>e", ":Neotree<CR>", { desc = "Focus Neo-tree" }),
+  vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>"),
 }
