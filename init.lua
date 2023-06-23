@@ -117,11 +117,11 @@ require('lazy').setup({
     opts = {
       -- See `:help gitsigns.txt`
       signs = {
-        add = { text = '▐' },
-        change = { text = '▐' },
+        add = { text = '▎' },
+        change = { text = '▎' },
         delete = { text = '▁' },
-        topdelete = { text = '▐' },
-        changedelete = { text = '▐' },
+        topdelete = { text = '▎' },
+        changedelete = { text = '▎' },
       },
       on_attach = function(bufnr)
         vim.keymap.set('n', '[h', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Previous hunk' })
