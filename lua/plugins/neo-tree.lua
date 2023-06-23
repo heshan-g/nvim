@@ -50,7 +50,7 @@ return {
           icon = {
             folder_closed = "",
             folder_open = "",
-            folder_empty = "ﰊ",
+            folder_empty = "¯\\_(ツ)_/¯",
             -- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
             -- then these will never be used.
             default = "*",
@@ -73,9 +73,9 @@ return {
               deleted   = "✖",-- this can only be used in the git_status source
               renamed   = "",-- this can only be used in the git_status source
               -- Status type
-              untracked = "",
+              untracked = "U",
               ignored   = "",
-              unstaged  = "",
+              unstaged  = "M",
               staged    = "",
               conflict  = "",
             }

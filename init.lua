@@ -117,11 +117,11 @@ require('lazy').setup({
     opts = {
       -- See `:help gitsigns.txt`
       signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
+        add = { text = '▐' },
+        change = { text = '▐' },
+        delete = { text = '▁' },
+        topdelete = { text = '▐' },
+        changedelete = { text = '▐' },
       },
       on_attach = function(bufnr)
         vim.keymap.set('n', '[h', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Previous hunk' })
@@ -161,7 +161,7 @@ require('lazy').setup({
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
-      char = '┊',
+      char = '▏',
       show_trailing_blankline_indent = false,
     },
   },
