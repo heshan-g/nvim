@@ -4,10 +4,10 @@ return {
   event = "VeryLazy",
   config = function()
     require("FTerm").setup({
-      border = "rounded",
+      border = "single",
       dimensions  = {
         height = 0.95,
-        width = 0.8,
+        width = 0.6,
       },
       -- blend = 15,
     })
