@@ -198,7 +198,7 @@ require('lazy').setup({
           end)()
         },
       },
-      focus_on_close = 'right',
+      focus_on_close = 'left',
     },
     version = '^1.0.0', -- optional: only update when a new 1.x version is released
   },
