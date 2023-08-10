@@ -7,7 +7,7 @@ return {
       border = "single",
       dimensions  = {
         height = 0.95,
-        width = 0.6,
+        width = 0.8,
       },
       -- blend = 15,
     })
