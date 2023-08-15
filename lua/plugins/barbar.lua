@@ -9,7 +9,10 @@ return {
   vim.keymap.set("n", ")", ":BufferMoveNext<CR>", { silent = true }),
 
   -- BufferPick
-  vim.keymap.set("n", "<C-p>", ":BufferPick<CR>"),
+  vim.keymap.set("n", "<leader>bp", ":BufferPick<CR>"),
+
+  -- Restore last closed buffer
+  vim.keymap.set("n", "<leader>br", ":BufferRestore<CR>"),
 
   -- Close buffer
   vim.keymap.set("n", "<leader>x", ":BufferClose<CR>", { silent = true }),
