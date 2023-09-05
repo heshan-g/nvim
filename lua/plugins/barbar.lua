@@ -44,4 +44,5 @@ return {
   -- Close buffer
   vim.keymap.set("n", "<leader>x", ":BufferClose<CR>", { silent = true }),
   vim.keymap.set("n", "<leader>X", ":BufferClose!<CR>", { silent = true }),
+  vim.keymap.set("n", "<leader>bx", ":BufferCloseAllButCurrent<CR>"),
 }
