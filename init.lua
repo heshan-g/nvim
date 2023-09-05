@@ -151,34 +151,6 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  -- Show buffer-line
-  {
-    'romgrk/barbar.nvim',
-    dependencies = {
-      'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-    },
-    init = function() vim.g.barbar_auto_setup = false end,
-    opts = {
-      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-      -- animation = true,
-      -- insert_at_start = true,
-      -- …etc.
-      sidebar_filetypes = {
-        ['neo-tree'] = {
-          event = "BufWipeout",
-          text = (function()
-            local cwd = vim.fn.getcwd()
-            local current_dir = vim.fn.fnamemodify(cwd, ":t")
-            return current_dir
-          end)()
-        },
-      },
-      focus_on_close = 'left',
-    },
-    version = '^1.0.0', -- optional: only update when a new 1.x version is released
-  },
-
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
