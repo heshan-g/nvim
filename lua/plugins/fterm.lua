@@ -4,12 +4,13 @@ return {
   event = "VeryLazy",
   config = function()
     require("FTerm").setup({
-      border = "single",
+      border = "rounded",
       dimensions  = {
         height = 0.95,
         width = 0.8,
       },
       -- blend = 15,
+      auto_close = true,
     })
 
     -- "_" is used in place of "/". <C-_> == <C-/>
