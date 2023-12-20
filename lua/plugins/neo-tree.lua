@@ -86,7 +86,7 @@ return {
       -- see `:h neo-tree-global-custom-commands`
       commands = {},
       window = {
-        position = "left",
+        position = "float",
         width = 40,
         mapping_options = {
           noremap = true,
@@ -234,6 +234,6 @@ return {
     }
   end,
 
-  vim.keymap.set("n", "<leader>e", ":Neotree<CR>", { silent = true, desc = "Focus Neo-tree" }),
+  vim.keymap.set("n", "<leader>e", ":Neotree reveal<CR>", { silent = true, desc = "Focus Neo-tree" }),
   vim.keymap.set("n", "<C-b>", ":Neotree toggle<CR>", { silent = true }),
 }
