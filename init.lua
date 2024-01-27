@@ -407,6 +407,7 @@ local servers = {
   -- pyright = {},
   -- rust_analyzer = {},
   tsserver = {},
+  tailwindcss = {},
 
   lua_ls = {
     Lua = {
