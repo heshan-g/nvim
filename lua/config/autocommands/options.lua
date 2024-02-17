@@ -58,4 +58,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Make the status line occupy the whole screen for all windows
 vim.opt.laststatus = 3
 
+-- Make tab width 4 spaces
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+
 return {}
