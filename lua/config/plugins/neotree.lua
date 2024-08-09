@@ -20,6 +20,7 @@ return {
           enabled = true,
         },
         window = {
+          width = 35,
           mappings = {
             ["[h"] = "prev_git_modified",
             ["]h"] = "next_git_modified",
