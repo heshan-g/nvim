@@ -15,11 +15,6 @@ vim.o.mouse = 'a'
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
--- Don't add characters deleted using x or Del to clipboard
-vim.cmd.noremap('x "_x')
-vim.cmd.noremap('X "_x')
-vim.cmd.noremap('<Del> "_x')
-
 
 -- Enable break indent
 vim.o.breakindent = true
