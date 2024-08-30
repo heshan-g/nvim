@@ -1,25 +1,24 @@
--- Onedark = {
---   'navarasu/onedark.nvim',
---   lazy = true,
---   config = function()
---     require('onedark').setup {
---       style = 'dark', -- dark, darker, cool, deep, warm, warmer, light
---     }
---     -- require('onedark').load()
---   end,
--- }
-
 Kanagawa = {
   'rebelot/kanagawa.nvim',
   lazy = false,
   priority = 1000,
   config = function()
     require('kanagawa').setup {}
-    vim.cmd('colorscheme kanagawa-dragon')
+    -- vim.cmd('colorscheme kanagawa-dragon')
   end,
 }
 
+Rosepine = {
+  "rose-pine/neovim",
+  lazy = false,
+  config = function()
+    require('rose-pine').setup {}
+    vim.cmd('colorscheme rose-pine-main')
+  end,
+  name = "rose-pine",
+}
+
 return {
-  -- Onedark,
   Kanagawa,
+  Rosepine,
 }
