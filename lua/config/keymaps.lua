@@ -8,6 +8,10 @@ map("n", "<C-l>", "<C-w>l")
 -- Telescope ------------------------------------------------------------------
 local telescope = require("telescope.builtin")
 
+map("n", "<leader><leader>", function()
+  telescope.buffers()
+end, { desc = "List open buffers" })
+
 map("n", "<leader>sf", function()
   telescope.find_files()
 end, { desc = "Find files" })
