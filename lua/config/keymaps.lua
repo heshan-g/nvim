@@ -1,5 +1,10 @@
 local map = vim.keymap.set
 
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-j>", "<C-w>j")
+map("n", "<C-k", "<C-w>k")
+map("n", "<C-l>", "<C-w>l")
+
 -- Telescope ------------------------------------------------------------------
 local telescope = require("telescope.builtin")
 
@@ -14,4 +19,7 @@ end, { desc = "Live grep" })
 map("n", "<leader>sk", function()
   telescope.keymaps()
 end, { desc = "Keymaps" })
+
+-- Neotree ---------------------------------------------------------------------
+map("n", "<C-b>", "<cmd>Neotree toggle<cr>", { desc = "Neotree toggle" })
 
