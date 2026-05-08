@@ -11,3 +11,7 @@ map("n", "<leader>sg", function()
   telescope.live_grep()
 end, { desc = "Live grep" })
 
+map("n", "<leader>sk", function()
+  telescope.keymaps()
+end, { desc = "Keymaps" })
+
