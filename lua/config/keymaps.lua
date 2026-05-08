@@ -20,6 +20,3 @@ map("n", "<leader>sk", function()
   telescope.keymaps()
 end, { desc = "Keymaps" })
 
--- Neotree ---------------------------------------------------------------------
-map("n", "<C-b>", "<cmd>Neotree toggle<cr>", { desc = "Neotree toggle" })
-
