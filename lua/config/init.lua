@@ -58,6 +58,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Make the status line occupy the whole screen for all windows
 vim.opt.laststatus = 3
 
+-- Make all window borders (including float) rounded
+vim.o.winborder = 'rounded'
+
 -- Make tab width 2 spaces
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2

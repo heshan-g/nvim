@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     -- Docs & Signature
     map("n", "K",  vim.lsp.buf.hover, "Hover Docs")
-    map("n", "<C-k>", vim.lsp.buf.signature_help, "Signature Help")
+    map({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, "Signature Help")
 
     -- Suggest code completion
     -- map("i", "<C-Space>", vim.lsp.buf.completion.trigger, "Suggest code completion")
@@ -46,10 +46,17 @@ vim.lsp.config("luals", {
   cmd = {'lua-language-server'},
   filetypes = {'lua'},
   root_markers = {'.luarc.json', '.luarc.jsonc'},
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+    },
+  },
 })
 
 -- Typescript ------------------------------------------------------------------
-vim.lsp.config("tsserver", {
+vim.lsp.config("ts_ls", {
   cmd = {"typescript-language-server", "--stdio"},
   filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
   root_markers = { "package.json", ".git", "tsconfig.json" },
@@ -57,7 +64,7 @@ vim.lsp.config("tsserver", {
 
 -- Enable LSPs -----------------------------------------------------------------
 vim.lsp.enable({
-  "tsserver",
+  "ts_ls",
   "luals",
 })
 
