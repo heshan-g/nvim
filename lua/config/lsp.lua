@@ -25,8 +25,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, "Signature Help")
 
     -- Suggest code completion
-    -- map("i", "<C-Space>", vim.lsp.buf.completion.trigger, "Suggest code completion")
-    -- map("i", "<C-Space>", "<C-x><C-o>", "Suggest code completion")
+    -- 1. Trigger completion
+    local client = vim.lsp.get_client_by_id(event.data.client_id)
+    vim.lsp.completion.enable(true, client.id, buf, {
+      autotrigger = true,
+    })
+    map("i", "<C-Space>", vim.lsp.completion.get, "Suggest code completion")
+
+    -- 2. Accept completion suggestion
+    vim.keymap.set("i", "<CR>", function()
+      return vim.fn.pumvisible() == 1 and "<C-y>" or "<CR>"
+    end, { expr = true })
 
     -- Diagnostics
     map("n", "<leader>e", vim.diagnostic.open_float, "Line Diagnostics")
@@ -58,8 +67,19 @@ vim.lsp.config("luals", {
 -- Typescript ------------------------------------------------------------------
 vim.lsp.config("ts_ls", {
   cmd = {"typescript-language-server", "--stdio"},
-  filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-  root_markers = { "package.json", ".git", "tsconfig.json" },
+  filetypes = {
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact",
+  },
+  root_markers = {
+    "package.json",
+    ".git",
+    "tsconfig.json",
+    "package-lock.json",
+    "yarn.lock",
+  },
 })
 
 -- Enable LSPs -----------------------------------------------------------------
