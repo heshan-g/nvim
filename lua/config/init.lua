@@ -15,6 +15,9 @@ vim.o.hlsearch = false
 vim.wo.number = true
 vim.wo.rnu = true
 
+-- Set textwidth
+vim.o.textwidth = 80
+
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
