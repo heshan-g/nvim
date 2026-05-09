@@ -71,10 +71,10 @@ vim.diagnostic.config({
   -- Show signs in the gutter (Neovim 0.10+ accepts a table here)
   signs = {
     text = {
-      [vim.diagnostic.severity.ERROR] = "▪",
-      [vim.diagnostic.severity.WARN]  = "▪",
-      [vim.diagnostic.severity.HINT]  = "▪",
-      [vim.diagnostic.severity.INFO]  = "▪",
+      [vim.diagnostic.severity.ERROR] = "█",
+      [vim.diagnostic.severity.WARN]  = "█",
+      [vim.diagnostic.severity.HINT]  = "█",
+      [vim.diagnostic.severity.INFO]  = "█",
     },
   },
   underline = true,
