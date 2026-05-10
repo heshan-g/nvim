@@ -17,12 +17,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("n", "gd", vim.lsp.buf.definition, "Go to Definition")
     map("n", "gD", vim.lsp.buf.declaration, "Go to Declaration")
     map("n", "gi", vim.lsp.buf.implementation, "Go to Implementation")
-    map("n", "gy", vim.lsp.buf.type_definition,"Go to Type Definition")
+    map("n", "gy", vim.lsp.buf.type_definition, "Go to Type Definition")
     map("n", "gr", vim.lsp.buf.references, "List References")
 
     -- Docs & Signature
-    map("n", "K",  vim.lsp.buf.hover, "Hover Docs")
-    map({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, "Signature Help")
+    map("n", "K", vim.lsp.buf.hover, "Hover Docs")
+    map("i", "<C-k>", vim.lsp.buf.signature_help, "Signature Help")
+
+    -- Actions
+    map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code Action")
+    map("n", "<leader>rn", vim.lsp.buf.rename, "Rename Symbol")
 
     -- Suggest code completion
     -- 1. Trigger completion
@@ -52,9 +56,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- Lua -------------------------------------------------------------------------
 vim.lsp.config("luals", {
-  cmd = {'lua-language-server'},
-  filetypes = {'lua'},
-  root_markers = {'.luarc.json', '.luarc.jsonc'},
+  cmd = { 'lua-language-server' },
+  filetypes = { 'lua' },
+  root_markers = { '.luarc.json', '.luarc.jsonc' },
   settings = {
     Lua = {
       diagnostics = {
@@ -66,7 +70,7 @@ vim.lsp.config("luals", {
 
 -- Typescript ------------------------------------------------------------------
 vim.lsp.config("ts_ls", {
-  cmd = {"typescript-language-server", "--stdio"},
+  cmd = { "typescript-language-server", "--stdio" },
   filetypes = {
     "typescript",
     "typescriptreact",
@@ -109,7 +113,7 @@ vim.diagnostic.config({
   severity_sort = true,
   float = {
     border = "rounded",
-    source = true,           -- show which server the diagnostic is from
+    source = true, -- show which server the diagnostic is from
     focusable = false,
   },
 })
