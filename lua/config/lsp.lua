@@ -69,8 +69,26 @@ vim.lsp.config("luals", {
 })
 
 -- Typescript ------------------------------------------------------------------
-vim.lsp.config("ts_ls", {
+vim.lsp.config("tsls", {
   cmd = { "typescript-language-server", "--stdio" },
+  filetypes = {
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact",
+  },
+  root_markers = {
+    "package.json",
+    ".git",
+    "tsconfig.json",
+    "package-lock.json",
+    "yarn.lock",
+  },
+})
+
+-- Tailwind CSS -----------------------------------------------------------------
+vim.lsp.config("twls", {
+  cmd = { "tailwindcss-language-server", "--stdio" },
   filetypes = {
     "typescript",
     "typescriptreact",
@@ -88,7 +106,8 @@ vim.lsp.config("ts_ls", {
 
 -- Enable LSPs -----------------------------------------------------------------
 vim.lsp.enable({
-  "ts_ls",
+  "tsls",
+  "twls",
   "luals",
 })
 
