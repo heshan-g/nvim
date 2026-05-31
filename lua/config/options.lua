@@ -50,6 +50,22 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+vim.api.nvim_create_user_command("YankRelativePath", function()
+  local line = vim.api.nvim_win_get_cursor(0)[1]
+  local path = vim.fn.expand("%")
+  local yanked = path .. ":" .. line
+  vim.fn.setreg("+", yanked)
+  vim.notify('Yanked ' .. yanked)
+end, {})
+
+vim.api.nvim_create_user_command("YankAbsolutePath", function()
+  local line = vim.api.nvim_win_get_cursor(0)[1]
+  local path = vim.fn.expand("%:p")
+  local yanked = path .. ":" .. line
+  vim.fn.setreg("+", yanked)
+  vim.notify('Yanked ' .. yanked)
+end, {})
+
 -- Make the status line occupy the whole screen for all windows
 vim.opt.laststatus = 3
 
